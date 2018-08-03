@@ -21,5 +21,9 @@ module Slist
         def peak_list(filename, size, page)
             read_list(filename).in_groups_of(size)[page]
         end
+
+        def get_lists(prefix = nil)
+            Dir.glob(Rails.root.join('tmp/slist/', "#{ prefix }*"))
+        end
     end
 end
